@@ -18,7 +18,8 @@ public class Name {
     }
 
     public String getFirst() {
-        return first;
+
+        return first.replaceFirst(first.substring(0,1), first.substring(0,1).toUpperCase());
     }
 
     public void setFirst(String first) {
@@ -26,7 +27,8 @@ public class Name {
     }
 
     public String getLast() {
-        return last;
+        //Inicial M
+        return last.replaceFirst(last.substring(0,1), last.substring(0,1).toUpperCase());
     }
 
     public void setLast(String last) {

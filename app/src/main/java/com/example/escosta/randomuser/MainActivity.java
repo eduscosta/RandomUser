@@ -11,13 +11,13 @@ import com.example.escosta.randomuser.model.DataUser;
 import com.example.escosta.randomuser.model.Result;
 import com.example.escosta.randomuser.utils.MyService;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
 
     private ProgressDialog load;
-
-    String firstname, lastname, email,address, city, state, username, password,registered, phone, picture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,23 +50,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(DataUser person){
 
-            Result user = (Result) person.getResults();
+            List<Result> user =  person.getResults();
 
-            binding.setUser(user);
+            binding.setUser(user.get(0));
 
-//
-//            firstname = user.get(0).
-
-//        sobrenome.setText(person.getLastname().substring(0,1).toUpperCase()+person.getLastname().substring(1));
-//        email.setText(person.getEmail());
-//        endereco.setText(person.getAddress());
-//        cidade.setText(person.getCity().substring(0,1).toUpperCase()+person.getCity().substring(1));
-//        estado.setText(person.getState());
-//        username.setText(person.getUsername());
-//        senha.setText(person.getPassword());
-//        nascimento.setText(person.getbDate());
-//        telefone.setText(person.getPhone());
-//        foto.setImageBitmap(person.getPicture());
             load.dismiss();
         }
     }

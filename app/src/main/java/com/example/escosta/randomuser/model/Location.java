@@ -19,7 +19,7 @@ public class Location {
     }
 
     public String getCity() {
-        return city;
+        return city.replaceFirst(city.substring(0,1), city.substring(0,1).toUpperCase());
     }
 
     public void setCity(String city) {
@@ -27,7 +27,7 @@ public class Location {
     }
 
     public String getState() {
-        return state;
+        return state.replaceFirst(state.substring(0,1), state.substring(0,1).toUpperCase());
     }
 
     public void setState(String state) {
