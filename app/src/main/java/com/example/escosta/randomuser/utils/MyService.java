@@ -27,7 +27,7 @@ public class MyService {
         response = JSON.parseObject(json, DataUser.class);
         return response;
     }
-
+    //downloadImage
     private Bitmap downloadImage(String url) {
         try {
             URL address;
