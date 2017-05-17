@@ -1,5 +1,7 @@
 package com.example.escosta.randomuser.model;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by escosta on 16/05/2017.
  */
@@ -17,6 +19,8 @@ public class Result {
     public Id id;
     public Picture picture;
     public String nat;
+
+    public Bitmap photo;
 
     public Result() {
     }
@@ -115,5 +119,13 @@ public class Result {
 
     public void setNat(String nat) {
         this.nat = nat;
+    }
+
+    public Bitmap getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Bitmap photo) {
+        this.photo = photo;
     }
 }

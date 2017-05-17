@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 
 import com.example.escosta.randomuser.databinding.ActivityMainBinding;
 import com.example.escosta.randomuser.model.DataUser;
@@ -19,11 +20,15 @@ public class MainActivity extends AppCompatActivity {
 
     private ProgressDialog load;
 
+    ImageView photo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+        photo = (ImageView) findViewById(R.id.imageView);
 
         GetJson download = new GetJson();
 
@@ -53,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
             List<Result> user =  person.getResults();
 
             binding.setUser(user.get(0));
+
+            photo.setImageBitmap(user.get(0).getPhoto());
 
             load.dismiss();
         }

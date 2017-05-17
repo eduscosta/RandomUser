@@ -25,6 +25,9 @@ public class MyService {
         json = Network.getJson(end);
         Log.i("Result", json);
         response = JSON.parseObject(json, DataUser.class);
+
+        response.getResults().get(0).setPhoto(downloadImage(response.getResults().get(0).getPicture().getLarge().toString()));
+
         return response;
     }
     //downloadImage
