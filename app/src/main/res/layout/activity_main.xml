@@ -151,5 +151,23 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@{user.cell}" />
         </LinearLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:onClick="runPutInDatabase"
+                android:text="Put in DB"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"/>
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:onClick="runNewPerson"
+                android:text="New Person"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"/>
+        </RelativeLayout>
     </LinearLayout>
 </layout>

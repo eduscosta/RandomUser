@@ -20,10 +20,11 @@ public class MyService {
 
     public DataUser getInformation(String end){
 
-        String json;
         DataUser response;
-        json = Network.getJson(end);
+        String json = Network.getJson(end);
+
         Log.i("Result", json);
+
         response = JSON.parseObject(json, DataUser.class);
 
         response.getResults().get(0).setPhoto(downloadImage(response.getResults().get(0).getPicture().getLarge().toString()));
